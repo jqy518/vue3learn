@@ -4,9 +4,13 @@
 import {watchEffect} from 'vue'
 import {useStore} from './store/MainStore'
 import classes from './assets/main.module.css'
-import {useRoute} from 'vue-router'
-const route = useRoute();
+import {useRouter} from 'vue-router'
+const router = useRouter();
 const store = useStore()
+console.log(router.resolve({
+  name:'not-found',
+  params:{pathMatch:['ffff','cccccc']}
+}))
 </script>
 
 <template>
