@@ -1,6 +1,7 @@
-<script  setup>
-    import {ref,reactive} from 'vue'
-    const num = ref(8)
+<script lang="ts" setup>
+import { ref, reactive } from 'vue'
+defineProps()
+const num = ref(8)
 </script>
 <template>
     <h1>this is home Page....{{num}}</h1>
