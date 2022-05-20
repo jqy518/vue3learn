@@ -1,12 +1,14 @@
-const {createSSRApp} = require('vue')
-const {renderToString } = require('vue/server-renderer')
-const app = createSSRApp({
-  data(){
-    return {
-      user:'JohnDoe'
+const { createServer } = require('vite')
+const { resolve } = require('path')
+console.log(__dirname)
+;(async () => {
+  const server = await createServer({
+    root: resolve(__dirname, '../'),
+    server: {
+      port: 1337
     }
-  },
-  template:`<div>Current user is: {{ user }}</div>`
-})
-
-renderToString(app).then((res)=>console.log(res))
+  })
+  await server.listen()
+  server.printUrls()
+  console.log(server.config)
+})()
